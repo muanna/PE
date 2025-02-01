@@ -41,7 +41,7 @@ const safeDeleteFile = (filePath) => {
 
 // Serve the frontend file
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/front end/photo-enhancer.html"));
+    res.sendFile(path.join(__dirname, "/photo-enhancer.html"));
 });
 
 // Image processing endpoint
