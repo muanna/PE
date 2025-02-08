@@ -7,8 +7,9 @@
     "server": "node server.js",
     "dev": "nodemon server.js",
     "api": "python auto_fix.py",
-    "start": "concurrently \"npm run server\" \"npm run api\""
-  },
+    "start": "npm run server & npm run api"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
