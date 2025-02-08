@@ -124,7 +124,9 @@ const safeDeleteFile = (filePath) => {
         });
     }, 500);
 };
-
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/photo-enhancer.html"));
+});
 app.post("/process-images", upload.array("images"), async (req, res) => {
     const files = req.files;
     if (!files || files.length === 0) return res.status(400).json({ message: "No files uploaded." });
@@ -157,7 +159,7 @@ app.post("/process-images", upload.array("images"), async (req, res) => {
             const cloudinaryResponse = await cloudinary.uploader.upload(processedFilePath, {
                 transformation: [
                    
-                   // { effect: "upscale" },
+                   // { //effect: "upscale" },
                     { effect: "enhance" },
                     { adjust: "improve" },
                     { color: "blue:20;green:10" } // Adding a slight boost of blue and green
